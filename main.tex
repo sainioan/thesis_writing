@@ -1,0 +1,130 @@
+\documentclass[english,twoside,censored,tkt,sw-line]{HYthesisML}
+\PassOptionsToClass{openright,twoside,a4paper}{report}
+%\PassOptionsToClass{openany,twoside,a4paper}{report}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\raggedbottom
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+\usepackage{flafter}
+\newcommand{\xmark}{\ding{55}}%
+\usepackage[style=authoryear,bibstyle=authoryear,backend=biber,natbib=true,maxnames=99,maxcitenames=2,giveninits=true,uniquename=init]{biblatex}
+\addbibresource{bibliography.bib}
+\DeclareNameAlias{sortname}{family-given}
+\usepackage{lmodern}         % Font package, again in some systems.
+\usepackage{textcomp}        % Package for special symbols
+\usepackage[euler]{textgreek}
+\usepackage[pdftex]{color, graphicx} % For pdf output and jpg/png graphics
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage[pdftex, plainpages=false]{hyperref} % For hyperlinks and pdf metadata
+\usepackage{fancyhdr}        % For nicer page headers
+\usepackage{tikz}            % For making vector graphics (hard to learn but powerful)
+%\usepackage{wrapfig}        % For nice text-wrapping figures (use at own discretion)
+\usepackage{amsmath, amssymb} % For better math
+\singlespacing               %line spacing options; normally use single
+\fussy
+\title{
+Personalized Recommender Systems
+        Bachelor Thesis}
+\author{Anniina Sainio}
+\date{March 2021}
+\supervisors{Xiaoli Liu}
+\examiners{Petteri Numri}
+\keywords{Recommender Systems, Personalization, Unexpectedness, Algorithmic Bias, Cold-start, Neural Networks }
+
+\additionalinformation{\translate{\track}}
+\classification{\protect{\ \\
+\  General and reference $\rightarrow$ Document types  $\rightarrow$ Surveys and overviews\  \\
+\  Applied computing  $\rightarrow$ Document management and text processing  $\rightarrow$ Document management $\rightarrow$ Text editing
+}}
+\hypersetup{
+    unicode=true,           % to show non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={},            % title
+    pdfauthor={},           % author
+    pdfsubject={},          % subject of the document
+    pdfcreator={},          % creator of the document
+    pdfproducer={pdfLaTeX}, % producer of the document
+    pdfkeywords={something} {something else}, % list of keywords for
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=black,        % color of internal links
+    citecolor=black,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+\begin{document}
+\maketitle
+\begin{otherlanguage}{english}
+\begin{abstract}
+Personalized Recommender Systems are designed to help users in decision making helping them choose items that meet their personal needs. This paper focuses on the architecture of five recent but different personalized recommender systems. The first method, the Personalized Unexpected Recommender System (PURS) model, integrates unexpectedness into the recommendation process. Unexpectedness is computed as the distance between new items and user interest clusters. The second method, Bayesian Graph Collaborative Filtering framework (BGCF), is based on Bayesian Graph Neural Networks and the node copying graph generative model which consider the uncertainty in the underlying user-item interaction graph bringing about more diversity to the recommendations and alleviating the data sparsity problem. The third method, Graph-Regularized Cross-modal learning framework (GRC), tackles the challenges of modeling complex non-linear user-item relations. The system exploits both positive and negative user-item interactions. Also unrecommended items are taken into account by the system. In addtion, most existing recommender systems use mostly historical data leading to cold-start problems for new users with no user history which, GRC focuses on resolving using neural contextual bandits. The fourth method explores a combination of bandit algorithms and deep neural networks with the goal of dealing with algorithmic bias and to optimize for long-term reward. The proposed method is a hybrid method combining the notions of bootstrapping and dropout, containing dropout units only in the second-to-last layer, acting as "heads” in a multihead network. The fifth method, SSE-PT Sequential Recommendation Via Personalized Transformer, is a neural network architecture which addresses the temporal collaborative ranking problem. Due to the attention mechanism, the system is able to pay attention to recent items in long sequences. All of the five models achieve state-of-the-art results.  
+
+\end{abstract}
+\end{otherlanguage}
+
+\newpage
+\mytableofcontents
+\frontmatter
+\mainmatter
+\include{bsc_english_contents}
+% \cleardoublepage                          %fixes the position of bibliography in bookmarks
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}  
+\printbibliography
+
+[1] Pan Li, Maofei Que, Zhichao Jiang, Yao Hu, and Alexander Tuzhilin. 2020. PURS: Personalized Unexpected Recommender System for Improving User Satisfaction. In Fourteenth ACM Conference on Recommender Systems (RecSys ’20), September 22–26, 2020, Virtual Event, Brazil. ACM, New York, NY, USA, 10 pages.
+\begin{sloppypar}
+https://doi.org/10.1145/3383313.3412238
+\end{sloppypar}
+
+[2] Jianing Sun, Wei Guo, Dengcheng Zhang, Yingxue Zhang, Florence Regol, Yaochen Hu, Huifeng Guo, Ruiming Tang, Han Yuan, Xiuqiang He, Mark Coates. 2020. A Framework for Recommending Accurate and Diverse Items Using Bayesian Graph Convolutional Neural Networks. In Proceedings of the 26rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD’20), August 23-27, 2020, Virtual Event, CA, USA. ACM, New York, NY, USA, 10 pages. https://doi.org/10.1145/3397271.3401123
+
+[3] Dalin Guo, Sofia Ira Ktena, Ferenc Huszar, Pranay Kumar Myana, Michael Kneier, Sourav Das, Wenzhe Shi, and Alykhan Tejani. 2020. Deep Bayesian Bandits: Exploring in Online Personalized Recommendations. In Fourteenth ACM Conference on Recommender Systems (RecSys ’20), September 22–26, 2020, Virtual Event, Brazil. ACM, New York, NY, USA, 6 pages. https://doi.org/10.1145/3383313.3412214
+
+[4] Xian Wu, Suleyman Cetintas, Deguang Kong, Miao Lu, Jian Yang, and NiteshV. Chawla. 2020. Learning from Cross-Modal Behavior Dynamics withGraph-Regularized Neural Contextual Bandit. InProceedings of The WebConference 2020 (WWW ’20), April 20–24, 2020, Taipei, Taiwan.ACM, NewYork, NY, USA, 11 pages.
+\newline
+https://doi.org/10.1145/3366423.3380178
+
+[5]Liwei Wu, Shuqing Li, Cho-Jui Hsieh, and James Sharpnack. 2020. SSE-PT:
+Sequential Recommendation Via Personalized Transformer. In Fourteenth
+ACM Conference on Recommender Systems (RecSys ’20), September 22–26,
+2020, Virtual Event, Brazil. ACM, New York, NY, USA, 10 pages. https://doi.
+org/10.1145/3383313.3412258
+
+[6] (Li\&Tuzhilin, cited in Pan Li, Maofei Que, Zhichao Jiang, Yao Hu, and Alexander Tuzhilin. 2020.) 
+
+[7] Personalized Glossary. https://www.dynamicyield.com/glossary/contextual-bandit/
+
+[8] Rudin Cynthia. Basic Algorithms. Duke   
+University.https://users.cs.duke.edu/~cynthia/CourseNotes/MABSlides.pdf
+
+[9] Coenen Anna. 2016. How The New York Times is Experimenting with Recommendation Algorithms. NYTOpen. New York Times.
+\begin{sloppypar}
+https://open.nytimes.com/how-the-new-york-times-is-experimenting-with-recommendation-algorithms-562f78624d26
+\end{sloppypar}
+
+[10] Neural Graph Collaborative Filtering by Xiang et al. in 2019, and Graph Convolutional Neural Networks for Web-Scale Recommender Systems by Ying et al. in 2018.
+
+\begin{sloppypar}
+https://machinelearningmastery.com/a-gentle-introduction-to-the-bootstrap-method/
+\end{sloppypar}
+
+
+[11]Code and data are open-sourced at
+https://github.com/wuliwei9278/SSE-PT
+
+[12] Zhang, S, Yao, L., and Tay 2019. Deep Learning Based Recommender System: A Survey and New Perspectives” by, Y. published in ACM Survey 
+\newline
+https://dl-acm-org.libproxy.helsinki.fi/doi/abs/10.1145/3285029
+\end{document}
+
