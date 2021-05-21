@@ -34,7 +34,7 @@ Personalized Recommender Systems}
 \author{Anniina Sainio}
 \date{May 2021}
 \supervisors{Dr. Xiaoli Liu}
-\examiners{Prof. Petteri Numri}
+\examiners{Prof. Petteri Nurmi}
 \keywords{Recommender Systems, Personalization, Unexpectedness, Feedback loop, Cold-start}
 
 \additionalinformation{\translate{\track}}
@@ -66,7 +66,7 @@ Personalized Recommender Systems}
 \maketitle
 \begin{otherlanguage}{english}
 \begin{abstract}
-Personalized Recommender Systems are designed to help users in decision making helping them choose items that meet their personal needs. However, the current systems are plagued by four key problems: content diversity, cold-start, data sparsity, and changing user preferences. This paper focuses on solutions to these common problems demonstraiting how five recent but different personalized recommender systems have managed to mitigate these problems. These four problems are: 1) The filter bubble problem causing boredom and dissatisfaction, 2) The cold-start problem, which is a condition where the circumstances  with new users and/or new items are unfavorable for the recommender system to yield the best possible results, 3) the problem of data sparsity when user-item historical data is sparse, and 4) the problem of dynamic, ever-changing user preferences. The Personalized Unexpected Recommender System (PURS) model, addresses the filter bubble problem effectively by integrating unexpectedness into the recommendation process. The Bayesian Graph Collaborative Filtering framework (BGCF), tackles the data sparsity issue utilizing a Bayesian Graph Neural Networks while also bringing about more diversity to the recommendations alleviating user boredom. The Graph-Regularized Cross-modal learning framework (GRC) undertakes the challenge of modeling complex non-linear user-item relations, exploiting both positive and negative user-item interactions. Moreover, most existing recommender systems use mostly historical data leading to cold-start problems for new users with no user history which the BGCF and GRC handle particularly well. The Deep Bayesian Bandits model focuses on resolving the feedback loop problem. The SSE-PT (Sequential Recommendation Via Personalized Transformer), is a neural network architecture which addresses the temporal collaborative ranking problem successfully capturing sequential data. Achieving state-of-the-art results, all of the five models provide unique and effective solutions to typical issues plaguing contemporary recommender systems.
+Personalized Recommender Systems are designed to help users in decision making helping them choose items that meet their personal needs. However, the current systems are plagued by four key problems. This paper focuses on solutions to these common problems demonstrating how five recent but different personalized recommender systems have managed to mitigate these problems. These problems are: 1) The filter bubble problem causing boredom and dissatisfaction, 2) The cold-start problem, which is a condition where the circumstances  with new users and/or new items are unfavorable for the recommender system to yield the best possible results, 3) the problem of data sparsity when user-item historical data is sparse, and 4) the problem of ever-changing user preferences. The Personalized Unexpected Recommender System (PURS) model, addresses the filter bubble problem (i.e. the feedback loop problem) by integrating unexpectedness into the recommendation process. Also the Deep Bayesian Bandits architecture is effective in overcoming the feedback loop problem. The Bayesian Graph Collaborative Filtering framework (BGCF) tackles the data sparsity issue utilizing a Bayesian Graph Neural Networks while also integrating diversity into the recommendations, helping combat user boredom. The Graph-Regularized Cross-modal learning framework (GRC) undertakes the challenge of modeling complex non-linear user-item relations, exploiting both positive and negative user-item interactions mitigating the data sparsity issue. Moreover, most existing recommender systems use mostly historical data leading to cold-start problems which BGCF and GRC attempt to fix with their graph based approach. The SSE-PT (Sequential Recommendation Via Personalized Transformer), is a neural network architecture which addresses the temporal collaborative ranking problem successfully capturing dynamic user data. Achieving state-of-the-art results, all of the five models provide unique and effective solutions to typical issues plaguing contemporary recommender systems.
 \end{abstract}
 \end{otherlanguage}
 
@@ -87,10 +87,10 @@ https://doi.org/10.1145/3383313.3412238
 
 [2] Jianing Sun, Wei Guo, Dengcheng Zhang, Yingxue Zhang, Florence Regol, Yaochen Hu, Huifeng Guo, Ruiming Tang, Han Yuan, Xiuqiang He, Mark Coates. 2020. A Framework for Recommending Accurate and Diverse Items Using Bayesian Graph Convolutional Neural Networks. In Proceedings of the 26rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD’20), August 23-27, 2020, Virtual Event, CA, USA. ACM, New York, NY, USA, 10 pages. https://doi.org/10.1145/3397271.3401123
 
-[3] Dalin Guo, Sofia Ira Ktena, Ferenc Huszar, Pranay Kumar Myana, Michael Kneier, Sourav Das, Wenzhe Shi, and Alykhan Tejani. 2020. Deep Bayesian Bandits: Exploring in Online Personalized Recommendations. In Fourteenth ACM Conference on Recommender Systems (RecSys ’20), September 22–26, 2020, Virtual Event, Brazil. ACM, New York, NY, USA, 6 pages. https://doi.org/10.1145/3383313.3412214
+[3] Xian Wu, Suleyman Cetintas, Deguang Kong, Miao Lu, Jian Yang, and NiteshV. Chawla. 2020. Learning from Cross-Modal Behavior Dynamics withGraph-Regularized Neural Contextual Bandit. InProceedings of The WebConference 2020 (WWW ’20), April 20–24, 2020, Taipei, Taiwan.ACM, NewYork, NY, USA, 11 pages.
 
-[4] Xian Wu, Suleyman Cetintas, Deguang Kong, Miao Lu, Jian Yang, and NiteshV. Chawla. 2020. Learning from Cross-Modal Behavior Dynamics withGraph-Regularized Neural Contextual Bandit. InProceedings of The WebConference 2020 (WWW ’20), April 20–24, 2020, Taipei, Taiwan.ACM, NewYork, NY, USA, 11 pages.
-\newline
+[4] Dalin Guo, Sofia Ira Ktena, Ferenc Huszar, Pranay Kumar Myana, Michael Kneier, Sourav Das, Wenzhe Shi, and Alykhan Tejani. 2020. Deep Bayesian Bandits: Exploring in Online Personalized Recommendations. In Fourteenth ACM Conference on Recommender Systems (RecSys ’20), September 22–26, 2020, Virtual Event, Brazil. ACM, New York, NY, USA, 6 pages. https://doi.org/10.1145/3383313.3412214
+
 https://doi.org/10.1145/3366423.3380178
 
 [5]Liwei Wu, Shuqing Li, Cho-Jui Hsieh, and James Sharpnack. 2020. SSE-PT:
@@ -99,29 +99,41 @@ ACM Conference on Recommender Systems (RecSys ’20), September 22–26,
 2020, Virtual Event, Brazil. ACM, New York, NY, USA, 10 pages. https://doi.
 org/10.1145/3383313.3412258
 
-[6] (Li\&Tuzhilin, cited in Pan Li, Maofei Que, Zhichao Jiang, Yao Hu, and Alexander Tuzhilin. 2020.) 
+[6]	Qiuxia Lu, Tianqi Chen, Weinan Zhang, Diyi Yang, and Yong Yu. 2012. Serendipitous personalized ranking for top-n recommendation. In Web Intelligence and Intelligent Agent Technology (WI-IAT), 2012 IEEE/WIC/ACM International Conferences on, Vol. 1. IEEE, 258–265.
 
-[7] Personalized Glossary. https://www.dynamicyield.com/glossary/contextual-bandit/
+[7] (Li\&Tuzhilin, cited in Pan Li, Maofei Que, Zhichao Jiang, Yao Hu, and Alexander Tuzhilin. 2020.) 
 
-[8] Rudin Cynthia. Basic Algorithms. Duke   
+[8]	Rianne van den Berg, Thomas N Kipf, and Max Welling. 2018. Graph Convolutional Matrix Completion. In Proc. ACM SIGKDD Int. Conf. Knowledge Discovery
+and Data Mining (Deep Learning Day).
+
+[9]	Xiang Wang, Xiangnan He, Meng Wang, Fuli Feng, and Tat-Seng Chua. 2019. Neural Graph Collaborative Filtering. In Proc. ACM Int. Conf. Research and Development in Information Retrieval.
+
+[10] Rex Ying, Ruining He, Kaifeng Chen, Pong Eksombatchai, William L. Hamilton, and Jure Leskovec. 2018. Graph Convolutional Neural Networks for Web-Scale Recommender Systems. In Proc. ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining.
+
+[11] William L. Hamilton, Zhitao Ying, and Jure Leskovec. 2017. Inductive Representation Learning on Large Graphs. In Proc. Adv. Neural Inf. Proc. Systems.
+
+[12] Personalized Glossary. https://www.dynamicyield.com/glossary/contextual-bandit/
+
+[13] Rudin Cynthia. Basic Algorithms. Duke   
 University.https://users.cs.duke.edu/~cynthia/CourseNotes/MABSlides.pdf
 
-[9] Coenen Anna. 2016. How The New York Times is Experimenting with Recommendation Algorithms. NYTOpen. New York Times.
+[14] Coenen Anna. 2016. How The New York Times is Experimenting with Recommendation Algorithms. NYTOpen. New York Times.
 \begin{sloppypar}
 https://open.nytimes.com/how-the-new-york-times-is-experimenting-with-recommendation-algorithms-562f78624d26
 \end{sloppypar}
 
-[10] Neural Graph Collaborative Filtering by Xiang et al. in 2019, and Graph Convolutional Neural Networks for Web-Scale Recommender Systems by Ying et al. in 2018.
-
+[15]
 \begin{sloppypar}
 https://machinelearningmastery.com/a-gentle-introduction-to-the-bootstrap-method/
 \end{sloppypar}
 
-
-[11]Code and data are open-sourced at
+[16]Code and data are open-sourced at
 https://github.com/wuliwei9278/SSE-PT
 
-[12] Zhang, S, Yao, L., and Tay 2019. Deep Learning Based Recommender System: A Survey and New Perspectives” by, Y. published in ACM Survey 
+[17]Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in Neural Information Processing Systems. 5998–6008.
+
+[18] Wang-Cheng Kang and Julian McAuley. 2018. Self-Attentive Sequential Recommendation. arXiv preprint arXiv:1808.09781 (2018).
+[19] Zhang, S, Yao, L., and Tay 2019. Deep Learning Based Recommender System: A Survey and New Perspectives” by, Y. published in ACM Survey 
 \newline
 https://dl-acm-org.libproxy.helsinki.fi/doi/abs/10.1145/3285029
 \end{document}
