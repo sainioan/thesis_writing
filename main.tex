@@ -1,4 +1,4 @@
-\documentclass[english,twoside,censored,tkt,sw-line]{HYthesisML}
+\documentclass[english,twoside,censored,tkt]{HYthesisML}
 \PassOptionsToClass{openright,twoside,a4paper}{report}
 %\PassOptionsToClass{openany,twoside,a4paper}{report}
 \usepackage{csquotes}
@@ -30,12 +30,11 @@
 \singlespacing               %line spacing options; normally use single
 \fussy
 \title{
-Personalized Recommender Systems
-        Bachelor Thesis}
+Personalized Recommender Systems}
 \author{Anniina Sainio}
 \date{May 2021}
-\supervisors{Xiaoli Liu}
-\examiners{Petteri Numri}
+\supervisors{Dr. Xiaoli Liu}
+\examiners{Prof. Petteri Numri}
 \keywords{Recommender Systems, Personalization, Unexpectedness, Feedback loop, Cold-start}
 
 \additionalinformation{\translate{\track}}
@@ -67,7 +66,7 @@ Personalized Recommender Systems
 \maketitle
 \begin{otherlanguage}{english}
 \begin{abstract}
-Personalized Recommender Systems are designed to help users in decision making helping them choose items that meet their personal needs. This paper focuses on solutions to four common problems faced by current recommender systems and how five recent but different personalized recommender systems have solved or mitigated these problems. These four problems are: 1) The filter bubble problem causing boredom and dissatisfaction, 2) The cold-start problem, which is a condition where the circumstances  with new users and/or new items are unfavorable for the recommender system to yield the best possible results, 3) the problem of data sparsity when user-item historical data is sparse, and 4) the problem of dynamic, ever-changing user preferences. The Personalized Unexpected Recommender System (PURS) model, addresses the filter bubble problem effectively by integrating unexpectedness into the recommendation process. The Bayesian Graph Collaborative Filtering framework (BGCF), tackles the data sparsity issue utilizing a Bayesian Graph Neural Networks while also bringing about more diversity to the recommendations alleviating user boredom. The Graph-Regularized Cross-modal learning framework (GRC) undertakes the challenge of modeling complex non-linear user-item relations, exploiting both positive and negative user-item interactions. Moreover, most existing recommender systems use mostly historical data leading to cold-start problems for new users with no user history which the BGCF and GRC handle particularly well. The Deep Bayesian Bandits model focuses on resolving the feedback loop problem. The SSE-PT (Sequential Recommendation Via Personalized Transformer), is a neural network architecture which addresses the temporal collaborative ranking problem successfully capturing sequential data. Achieving state-of-the-art results, all of the five models provide unique and effective solutions to typical issues plaguing contemporary recommender systems.
+Personalized Recommender Systems are designed to help users in decision making helping them choose items that meet their personal needs. However, the current systems are plagued by four key problems: content diversity, cold-start, data sparsity, and changing user preferences. This paper focuses on solutions to these common problems demonstraiting how five recent but different personalized recommender systems have managed to mitigate these problems. These four problems are: 1) The filter bubble problem causing boredom and dissatisfaction, 2) The cold-start problem, which is a condition where the circumstances  with new users and/or new items are unfavorable for the recommender system to yield the best possible results, 3) the problem of data sparsity when user-item historical data is sparse, and 4) the problem of dynamic, ever-changing user preferences. The Personalized Unexpected Recommender System (PURS) model, addresses the filter bubble problem effectively by integrating unexpectedness into the recommendation process. The Bayesian Graph Collaborative Filtering framework (BGCF), tackles the data sparsity issue utilizing a Bayesian Graph Neural Networks while also bringing about more diversity to the recommendations alleviating user boredom. The Graph-Regularized Cross-modal learning framework (GRC) undertakes the challenge of modeling complex non-linear user-item relations, exploiting both positive and negative user-item interactions. Moreover, most existing recommender systems use mostly historical data leading to cold-start problems for new users with no user history which the BGCF and GRC handle particularly well. The Deep Bayesian Bandits model focuses on resolving the feedback loop problem. The SSE-PT (Sequential Recommendation Via Personalized Transformer), is a neural network architecture which addresses the temporal collaborative ranking problem successfully capturing sequential data. Achieving state-of-the-art results, all of the five models provide unique and effective solutions to typical issues plaguing contemporary recommender systems.
 \end{abstract}
 \end{otherlanguage}
 
